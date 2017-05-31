@@ -24,16 +24,16 @@ func (s *MemStats) Gather(acc telegraf.Accumulator) error {
 	}
 
 	fields := map[string]interface{}{
-		"total":             vm.Total,
-		"available":         vm.Available,
-		"used":              vm.Used,
-		"free":              vm.Free,
-		"cached":            vm.Cached,
-		"buffered":          vm.Buffers,
-		"active":            vm.Active,
-		"inactive":          vm.Inactive,
+		//"total":             vm.Total,
+		//"available":         vm.Available,
+		//"used":              vm.Used,
+		//"free":              vm.Free,
+		//"cached":            vm.Cached,
+		//"buffered":          vm.Buffers,
+		//"active":            vm.Active,
+		//"inactive":          vm.Inactive,
 		"used_percent":      100 * float64(vm.Used) / float64(vm.Total),
-		"available_percent": 100 * float64(vm.Available) / float64(vm.Total),
+		//"available_percent": 100 * float64(vm.Available) / float64(vm.Total),
 	}
 	acc.AddCounter("mem", fields, nil)
 

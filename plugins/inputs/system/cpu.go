@@ -59,16 +59,16 @@ func (s *CPUStats) Gather(acc telegraf.Accumulator) error {
 		if s.CollectCPUTime {
 			// Add cpu time metrics
 			fieldsC := map[string]interface{}{
-				"time_user":       cts.User,
-				"time_system":     cts.System,
+				//"time_user":       cts.User,
+				//"time_system":     cts.System,
 				"time_idle":       cts.Idle,
-				"time_nice":       cts.Nice,
-				"time_iowait":     cts.Iowait,
-				"time_irq":        cts.Irq,
-				"time_softirq":    cts.Softirq,
-				"time_steal":      cts.Steal,
-				"time_guest":      cts.Guest,
-				"time_guest_nice": cts.GuestNice,
+				//"time_nice":       cts.Nice,
+				//"time_iowait":     cts.Iowait,
+				//"time_irq":        cts.Irq,
+				//"time_softirq":    cts.Softirq,
+				//"time_steal":      cts.Steal,
+				//"time_guest":      cts.Guest,
+				//"time_guest_nice": cts.GuestNice,
 			}
 			acc.AddCounter("cpu", fieldsC, tags, now)
 		}
@@ -91,16 +91,16 @@ func (s *CPUStats) Gather(acc telegraf.Accumulator) error {
 			continue
 		}
 		fieldsG := map[string]interface{}{
-			"usage_user":       100 * (cts.User - lastCts.User - (cts.Guest - lastCts.Guest)) / totalDelta,
-			"usage_system":     100 * (cts.System - lastCts.System) / totalDelta,
-			"usage_idle":       100 * (cts.Idle - lastCts.Idle) / totalDelta,
-			"usage_nice":       100 * (cts.Nice - lastCts.Nice - (cts.GuestNice - lastCts.GuestNice)) / totalDelta,
-			"usage_iowait":     100 * (cts.Iowait - lastCts.Iowait) / totalDelta,
-			"usage_irq":        100 * (cts.Irq - lastCts.Irq) / totalDelta,
-			"usage_softirq":    100 * (cts.Softirq - lastCts.Softirq) / totalDelta,
-			"usage_steal":      100 * (cts.Steal - lastCts.Steal) / totalDelta,
-			"usage_guest":      100 * (cts.Guest - lastCts.Guest) / totalDelta,
-			"usage_guest_nice": 100 * (cts.GuestNice - lastCts.GuestNice) / totalDelta,
+			//"usage_user":       100 * (cts.User - lastCts.User - (cts.Guest - lastCts.Guest)) / totalDelta,
+			//"usage_system":     100 * (cts.System - lastCts.System) / totalDelta,
+			//"usage_idle":       100 * (cts.Idle - lastCts.Idle) / totalDelta,
+			//"usage_nice":       100 * (cts.Nice - lastCts.Nice - (cts.GuestNice - lastCts.GuestNice)) / totalDelta,
+			//"usage_iowait":     100 * (cts.Iowait - lastCts.Iowait) / totalDelta,
+			//"usage_irq":        100 * (cts.Irq - lastCts.Irq) / totalDelta,
+			//"usage_softirq":    100 * (cts.Softirq - lastCts.Softirq) / totalDelta,
+			//"usage_steal":      100 * (cts.Steal - lastCts.Steal) / totalDelta,
+			//"usage_guest":      100 * (cts.Guest - lastCts.Guest) / totalDelta,
+			//"usage_guest_nice": 100 * (cts.GuestNice - lastCts.GuestNice) / totalDelta,
 		}
 		acc.AddGauge("cpu", fieldsG, tags, now)
 	}

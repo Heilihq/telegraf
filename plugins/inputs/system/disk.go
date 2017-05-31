@@ -65,11 +65,11 @@ func (s *DiskStats) Gather(acc telegraf.Accumulator) error {
 		}
 
 		fields := map[string]interface{}{
-			"total":        du.Total,
-			"free":         du.Free,
-			"used":         du.Used,
+			//"total":        du.Total,
+			//"free":         du.Free,
+			//"used":         du.Used,
 			"used_percent": used_percent,
-			"inodes_total": du.InodesTotal,
+			//"inodes_total": du.InodesTotal,
 			"inodes_free":  du.InodesFree,
 			"inodes_used":  du.InodesUsed,
 		}
@@ -145,14 +145,14 @@ func (s *DiskIOStats) Gather(acc telegraf.Accumulator) error {
 		}
 
 		fields := map[string]interface{}{
-			"reads":            io.ReadCount,
-			"writes":           io.WriteCount,
-			"read_bytes":       io.ReadBytes,
-			"write_bytes":      io.WriteBytes,
-			"read_time":        io.ReadTime,
-			"write_time":       io.WriteTime,
-			"io_time":          io.IoTime,
-			"iops_in_progress": io.IopsInProgress,
+			//"reads":            io.ReadCount,
+			//"writes":           io.WriteCount,
+			//"read_bytes":       io.ReadBytes,
+			//"write_bytes":      io.WriteBytes,
+			//"read_time":        io.ReadTime,
+			//"write_time":       io.WriteTime,
+			//"io_time":          io.IoTime,
+			//"iops_in_progress": io.IopsInProgress,
 		}
 		acc.AddCounter("diskio", fields, tags)
 	}
