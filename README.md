@@ -1,3 +1,15 @@
+# Fothscale modifications!
+To use the modified version of the telegraf, follow these steps:
+1. [Install Go](https://golang.org/doc/install)
+2. [Setup your GOPATH](https://golang.org/doc/code.html#GOPATH)
+3. Run `go get github.com/Heilihq/telegraf`
+4. Run `mv $GOPATH/src/github.com/Heilihq/ $GOPATH/src/github.com/influxdata/telegraf`
+5. Run `cd $GOPATH/src/github.com/influxdata/telegraf`
+6. Run `make`
+7. Run `cd cmd/telegraf/`
+8. Run `go run telegraf.go --config telegraf.conf`
+
+
 # Telegraf [![Circle CI](https://circleci.com/gh/influxdata/telegraf.svg?style=svg)](https://circleci.com/gh/influxdata/telegraf) [![Docker pulls](https://img.shields.io/docker/pulls/library/telegraf.svg)](https://hub.docker.com/_/telegraf/)
 
 Telegraf is an agent written in Go for collecting, processing, aggregating,
@@ -45,18 +57,6 @@ Latest:
 ### Ansible Role:
 
 Ansible role: https://github.com/rossmcdonald/telegraf
-
-### From Source:
-
-Telegraf manages dependencies via [gdm](https://github.com/sparrc/gdm),
-which gets installed via the Makefile
-if you don't have it already. You also must build with golang version 1.8+.
-
-1. [Install Go](https://golang.org/doc/install)
-2. [Setup your GOPATH](https://golang.org/doc/code.html#GOPATH)
-3. Run `go get github.com/influxdata/telegraf`
-4. Run `cd $GOPATH/src/github.com/influxdata/telegraf`
-5. Run `make`
 
 ## How to use it:
 
